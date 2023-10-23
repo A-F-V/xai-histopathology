@@ -1,7 +1,7 @@
 from .base_data_set import BaseDataset
 from typing import Tuple, TypedDict, Optional
 import os
-from src.utilities.os_utilities import copy_dir, copy_file
+from src.utilities.os_utilities import copy_dir_into, copy_file
 
 
 class BACHSettings(TypedDict):
@@ -29,10 +29,10 @@ class BACH(BaseDataset):
     def process(self, unzipped_tree: str, processed_tree: str):
         # Transfer files
         photos_folder = os.path.join(
-            unzipped_tree, self.get_data_set_name(), "ICIAR2018_BACH_Challenge", "Photos")
+            unzipped_tree,  "ICIAR2018_BACH_Challenge", "Photos")
         for class_name in self.class_names:
-            copy_dir(os.path.join(photos_folder, class_name),
-                     os.path.join(processed_tree, self.get_data_set_name()))
+            copy_dir_into(os.path.join(
+                photos_folder, class_name), processed_tree)
         # TODO:
         pass
 

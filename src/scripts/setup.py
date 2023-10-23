@@ -8,7 +8,7 @@ from torchvision.transforms import ToTensor, ToPILImage
 import os
 
 from src.datasets.PanNuke import PanNuke
-from src.utilities.os_utilities import copy_dir, copy_file
+from src.utilities.os_utilities import copy_dir_into, copy_file
 
 from src.datasets.base_data_set import DatasetLoader, DatasetLoadingRules
 from src.datasets.BACH import BACH

@@ -6,7 +6,7 @@ import os
 import zipfile
 import tarfile
 import os
-from src.utilities.os_utilities import delete_dir_if_exists, copy_dir
+from src.utilities.os_utilities import delete_dir_if_exists, copy_dir_into
 
 # Literal type
 ZipFormat = Literal["ZIP", "TAR", "NONE"]
